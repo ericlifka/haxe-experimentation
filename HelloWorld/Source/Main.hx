@@ -14,6 +14,8 @@ class Main extends Sprite {
 		
 		
 	}
-	
-	
+
+    static public function main() {
+        trace("Hello World!");
+    }
 }
