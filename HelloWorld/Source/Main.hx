@@ -11,6 +11,9 @@ class Main extends Sprite {
         var bitmapData = Assets.getBitmapData("assets/openfl.png");
         var bitmap = new Bitmap(bitmapData);
         addChild(bitmap);
+
+        bitmap.x = 100;
+        bitmap.y = 200;
 	}
 
     static public function main() {
