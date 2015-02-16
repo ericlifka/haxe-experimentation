@@ -12,8 +12,8 @@ class Main extends Sprite {
         var bitmap = new Bitmap(bitmapData);
         addChild(bitmap);
 
-        bitmap.x = 100;
-        bitmap.y = 200;
+        bitmap.x = (stage.stageWidth - bitmap.width) / 2;
+        bitmap.y = (stage.stageHeight - bitmap.height) / 2;
 	}
 
     static public function main() {
