@@ -15,8 +15,4 @@ class Main extends Sprite {
         bitmap.x = (stage.stageWidth - bitmap.width) / 2;
         bitmap.y = (stage.stageHeight - bitmap.height) / 2;
 	}
-
-    static public function main() {
-        trace("Hello World!");
-    }
 }
