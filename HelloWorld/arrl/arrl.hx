@@ -5,3 +5,9 @@ class Arrl {
         trace("arrl.new");
     }
 }
+
+class Environment {
+    public function new() {
+
+    }
+}
