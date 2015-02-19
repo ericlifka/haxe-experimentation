@@ -6,7 +6,7 @@ class Arrl {
     }
 }
 
-private class Symbol {
+class Symbol {
     var name:String;
 
     static var definedSymbols:Map<String, Symbol>;
