@@ -56,3 +56,9 @@ class Environment {
         }
     }
 }
+
+class Eval {
+    static public function eval(expression:Dynamic, scope:Environment) {
+
+    }
+}
