@@ -29,8 +29,30 @@ class Symbol {
 
 class Environment {
     var definedSymbols:Map<Symbol, Dynamic>;
+    var parent:Environment;
 
-    public function new() {
+    public function new(parent:Environment) {
+        this.parent = parent;
+        this.definedSymbols = new Map();
+    }
 
+    public function putValue(sym:Symbol, value:Dynamic) {
+        definedSymbols.set(sym, value);
+    }
+
+    public function hasValue(sym:Symbol) {
+        return definedSymbols.exists(sym);
+    }
+
+    public function retrieveValue(sym:Symbol) {
+        if (this.hasValue(sym)) {
+            return definedSymbols.get(sym);
+        }
+        else if (this.parent != null) {
+            return this.parent.retrieveValue(sym);
+        }
+        else {
+            return null;
+        }
     }
 }
