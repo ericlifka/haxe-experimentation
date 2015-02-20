@@ -28,6 +28,8 @@ class Symbol {
 }
 
 class Environment {
+    var definedSymbols:Map<Symbol, Dynamic>;
+
     public function new() {
 
     }
