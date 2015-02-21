@@ -32,7 +32,7 @@ class Symbol {
 }
 
 class Environment {
-    var definedSymbols:Map<Symbol, Dynamic>;
+    var definedSymbols:Map<Symbol, ArrlType>;
     var parent:Environment;
 
     public function new(parent:Environment) {
@@ -40,7 +40,7 @@ class Environment {
         this.definedSymbols = new Map();
     }
 
-    public function putValue(sym:Symbol, value:Dynamic) {
+    public function putValue(sym:Symbol, value:ArrlType) {
         definedSymbols.set(sym, value);
     }
 
@@ -62,7 +62,7 @@ class Environment {
 }
 
 class Eval {
-    static public function eval(expression:Dynamic, scope:Environment) {
+    static public function eval(expression:ArrlType, scope:Environment) {
 
     }
 }
