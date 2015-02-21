@@ -6,6 +6,10 @@ class Arrl {
     }
 }
 
+class ArrlType {
+
+}
+
 class Symbol {
     var name:String;
 
