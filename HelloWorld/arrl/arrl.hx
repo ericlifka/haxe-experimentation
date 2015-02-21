@@ -19,7 +19,7 @@ class Symbol {
         this.name = name;
     }
 
-    static public function symbol(name:String) {
+    static public function symbol(name:String):Symbol {
         if (definedSymbols.exists(name)) {
             return definedSymbols.get(name);
         }
@@ -44,11 +44,11 @@ class Environment {
         definedSymbols.set(sym, value);
     }
 
-    public function hasValue(sym:Symbol) {
+    public function hasValue(sym:Symbol):Bool {
         return definedSymbols.exists(sym);
     }
 
-    public function retrieveValue(sym:Symbol) {
+    public function retrieveValue(sym:Symbol):ArrlType {
         if (this.hasValue(sym)) {
             return definedSymbols.get(sym);
         }
@@ -62,7 +62,7 @@ class Environment {
 }
 
 class Eval {
-    static public function eval(expression:ArrlType, scope:Environment) {
-
+    static public function eval(expression:ArrlType, scope:Environment):ArrlType {
+        return null;
     }
 }
