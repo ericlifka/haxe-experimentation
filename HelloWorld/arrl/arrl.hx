@@ -7,7 +7,9 @@ class Arrl {
 }
 
 class ArrlType {
-
+    public function isAtom() {
+        return false;
+    }
 }
 
 class Symbol {
@@ -41,16 +43,16 @@ class Environment {
     }
 
     public function putValue(sym:Symbol, value:ArrlType) {
-        definedSymbols.set(sym, value);
+        this.definedSymbols.set(sym, value);
     }
 
     public function hasValue(sym:Symbol):Bool {
-        return definedSymbols.exists(sym);
+        return this.definedSymbols.exists(sym);
     }
 
     public function retrieveValue(sym:Symbol):ArrlType {
         if (this.hasValue(sym)) {
-            return definedSymbols.get(sym);
+            return this.definedSymbols.get(sym);
         }
         else if (this.parent != null) {
             return this.parent.retrieveValue(sym);
@@ -63,6 +65,9 @@ class Environment {
 
 class Eval {
     static public function eval(expression:ArrlType, scope:Environment):ArrlType {
+
+
+
         return null;
     }
 }
