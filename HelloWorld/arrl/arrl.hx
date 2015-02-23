@@ -9,15 +9,17 @@ class Arrl {
 class ArrlType {
     private var type:String;
 
+    private function new() {}
+
     public function isAtom() {
         return false;
     }
 
-    // builders
+// builders
     private static var nil:ArrlType;
 
     public static function Nil():ArrlType {
-        if (nil) {
+        if (nil != null) {
             return nil;
         }
         else {
