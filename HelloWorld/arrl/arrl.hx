@@ -7,8 +7,24 @@ class Arrl {
 }
 
 class ArrlType {
+    private var type:String;
+
     public function isAtom() {
         return false;
+    }
+
+    // builders
+    private static var nil:ArrlType;
+
+    public static function Nil():ArrlType {
+        if (nil) {
+            return nil;
+        }
+        else {
+            nil = new ArrlType();
+            nil.type = "nil";
+            return nil;
+        }
     }
 }
 
@@ -65,7 +81,6 @@ class Environment {
 
 class Eval {
     static public function eval(expression:ArrlType, scope:Environment):ArrlType {
-
 
 
         return null;
