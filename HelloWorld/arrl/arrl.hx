@@ -12,6 +12,10 @@ class ArrlType {
     private function new() {}
 
     public function isAtom() {
+        if (type == "nil") {
+            return true;
+        }
+
         return false;
     }
 
