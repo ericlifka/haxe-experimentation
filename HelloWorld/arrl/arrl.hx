@@ -74,7 +74,7 @@ class Environment {
             return this.parent.retrieveValue(sym);
         }
         else {
-            return null;
+            return ArrlType.Nil();
         }
     }
 }
@@ -83,6 +83,6 @@ class Eval {
     static public function eval(expression:ArrlType, scope:Environment):ArrlType {
 
 
-        return null;
+        return ArrlType.Nil();
     }
 }
