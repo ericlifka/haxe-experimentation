@@ -11,12 +11,20 @@ class ArrlType {
 
     private function new() {}
 
-    public function isAtom() {
+    public function isAtom():Bool {
         if (type == "nil") {
             return true;
         }
 
         return false;
+    }
+
+    public function isSymbol():Bool {
+        return type == "symbol";
+    }
+
+    public function getSymbol():Symbol {
+        return null;
     }
 
 // builders
@@ -89,6 +97,10 @@ class Eval {
     static public function eval(expression:ArrlType, scope:Environment):ArrlType {
         if (expression.isAtom()) {
             return expression;
+        }
+
+        if (expression.isSymbol()) {
+            return scope.retrieveValue(expression.getSymbol());
         }
 
         return ArrlType.Nil();
