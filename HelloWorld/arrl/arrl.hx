@@ -8,6 +8,7 @@ class Arrl {
 
 class ArrlType {
     private var type:String;
+    private var symbol:Symbol;
 
     private function new() {}
 
@@ -24,7 +25,12 @@ class ArrlType {
     }
 
     public function getSymbol():Symbol {
-        return null;
+        if (type == "symbol") {
+            return symbol;
+        }
+        else {
+            throw "TypeError - called getSymbol() on a non symbol ArrlType";
+        }
     }
 
 // builders
@@ -39,6 +45,13 @@ class ArrlType {
             nil.type = "nil";
             return nil;
         }
+    }
+
+    public static function Symbol(symbol:Symbol):ArrlType {
+        var sym = new ArrlType();
+        sym.type = "symbol";
+        sym.symbol = symbol;
+        return sym;
     }
 }
 
