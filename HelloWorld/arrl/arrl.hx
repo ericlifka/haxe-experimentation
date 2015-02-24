@@ -116,6 +116,14 @@ class Eval {
             return scope.retrieveValue(expression.getSymbol());
         }
 
+        if (expression.isList()) {
+            return evalList(expression, scope);
+        }
+
+        return ArrlType.Nil();
+    }
+
+    static public function evalList(expression:ArrlType, scope:Environment):ArrlType {
         return ArrlType.Nil();
     }
 }
