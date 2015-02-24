@@ -87,7 +87,9 @@ class Environment {
 
 class Eval {
     static public function eval(expression:ArrlType, scope:Environment):ArrlType {
-
+        if (expression.isAtom()) {
+            return expression;
+        }
 
         return ArrlType.Nil();
     }
