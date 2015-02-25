@@ -9,6 +9,8 @@ class Arrl {
 class ArrlType {
     private var type:String;
     private var symbol:Symbol;
+    private var car:ArrlType;
+    private var cdr:ArrlType;
 
     private function new() {}
 
@@ -31,6 +33,10 @@ class ArrlType {
         else {
             throw "TypeError - called getSymbol() on a non symbol ArrlType";
         }
+    }
+
+    public function isList():Bool {
+        return type == "list";
     }
 
 // builders
