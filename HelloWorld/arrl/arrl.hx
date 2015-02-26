@@ -59,6 +59,14 @@ class ArrlType {
         sym.symbol = symbol;
         return sym;
     }
+
+    public static function Cons(car:ArrlType, cdr:ArrlType):ArrlType {
+        var cons = new ArrlType();
+        cons.type = "cons";
+        cons.car = car;
+        cons.cdr = cdr;
+        return cons;
+    }
 }
 
 class Symbol {
