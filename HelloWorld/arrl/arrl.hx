@@ -36,7 +36,7 @@ class ArrlType {
     }
 
     public function isList():Bool {
-        return type == "list";
+        return type == "cons";
     }
 
 // builders
