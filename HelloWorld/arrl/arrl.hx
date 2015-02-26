@@ -12,7 +12,9 @@ class ArrlType {
     private var car:ArrlType;
     private var cdr:ArrlType;
 
-    private function new() {}
+    private function new(type:String) {
+        this.type = type;
+    }
 
     public function isAtom():Bool {
         if (type == "nil") {
@@ -47,22 +49,19 @@ class ArrlType {
             return nil;
         }
         else {
-            nil = new ArrlType();
-            nil.type = "nil";
+            nil = new ArrlType("nil");
             return nil;
         }
     }
 
     public static function Symbol(symbol:Symbol):ArrlType {
-        var sym = new ArrlType();
-        sym.type = "symbol";
+        var sym = new ArrlType("symbol");
         sym.symbol = symbol;
         return sym;
     }
 
     public static function Cons(car:ArrlType, cdr:ArrlType):ArrlType {
-        var cons = new ArrlType();
-        cons.type = "cons";
+        var cons = new ArrlType("cons");
         cons.car = car;
         cons.cdr = cdr;
         return cons;
