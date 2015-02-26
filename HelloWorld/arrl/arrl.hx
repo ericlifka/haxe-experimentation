@@ -61,9 +61,19 @@ class ArrlType {
     }
 
     public static function Cons(car:ArrlType, cdr:ArrlType):ArrlType {
+        if (car == null) {
+            return Nil();
+        }
+
         var cons = new ArrlType("cons");
         cons.car = car;
-        cons.cdr = cdr;
+
+        if (cdr == null) {
+            cons.cdr = Nil();
+        }
+        else {
+            cons.cdr = cdr;
+        }
         return cons;
     }
 }
