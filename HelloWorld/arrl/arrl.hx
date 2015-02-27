@@ -165,6 +165,11 @@ class Eval {
     }
 
     static public function evalList(expression:ArrlType, scope:Environment):ArrlType {
+        var first:ArrlType = expression.getCar();
+        var rest:ArrlType = expression.getCdr();
+
+        var callable:ArrlType = eval(first, scope);
+
         return ArrlType.Nil();
     }
 }
