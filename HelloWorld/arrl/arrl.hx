@@ -41,6 +41,24 @@ class ArrlType {
         return type == "cons";
     }
 
+    public function getCar():ArrlType {
+        if (isList()) {
+            return car;
+        }
+        else {
+            throw "TypeError - called getCar() on a non list ArrlType";
+        }
+    }
+
+    public function getCdr():ArrlType {
+        if (isList()) {
+            return cdr;
+        }
+        else {
+            throw "TypeError - called getCdr() on a non list ArrlType";
+        }
+    }
+
 // builders
     private static var nil:ArrlType;
 
