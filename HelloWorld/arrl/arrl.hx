@@ -11,6 +11,7 @@ class ArrlType {
     private var symbol:Symbol;
     private var car:ArrlType;
     private var cdr:ArrlType;
+    private var errorMessage:String;
 
     private function new(type:String) {
         this.type = type;
@@ -59,6 +60,19 @@ class ArrlType {
         }
     }
 
+    public function isError():Bool {
+        return type == "error";
+    }
+
+    public function getError():String {
+        if (isError()) {
+            return errorMessage;
+        }
+        else {
+            throw "TypeError - called getError() on a non error ArrlType";
+        }
+    }
+
 // builders
     private static var nil:ArrlType;
 
@@ -93,6 +107,12 @@ class ArrlType {
             cons.cdr = cdr;
         }
         return cons;
+    }
+
+    public static function Error(message:String) {
+        var error = new ArrlType("error");
+        error.errorMessage = message;
+        return error;
     }
 }
 
