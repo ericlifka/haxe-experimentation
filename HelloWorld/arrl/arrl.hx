@@ -18,11 +18,7 @@ class ArrlType {
     }
 
     public function isAtom():Bool {
-        if (type == "nil") {
-            return true;
-        }
-
-        return false;
+        return type == "nil" || type == "error";
     }
 
     public function isSymbol():Bool {
