@@ -29,7 +29,7 @@ class ArrlType {
     }
 
     public function getSymbol():Symbol {
-        if (type == "symbol") {
+        if (isSymbol()) {
             return symbol;
         }
         else {
