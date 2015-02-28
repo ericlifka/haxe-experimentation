@@ -202,6 +202,12 @@ class Eval {
 
         var callable:ArrlType = eval(first, scope);
 
+        if (callable.isError()) {
+            return callable;
+        }
+
+
+
         return ArrlType.Nil();
     }
 }
