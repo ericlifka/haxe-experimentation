@@ -18,7 +18,7 @@ class ArrlType {
     }
 
     public function isAtom():Bool {
-        return type == "nil" || type == "error";
+        return isNil() || isError();
     }
 
     public function isNil():Bool {
@@ -71,6 +71,18 @@ class ArrlType {
         else {
             throw "TypeError - called getError() on a non error ArrlType";
         }
+    }
+
+    public function isFunction():Bool {
+        return type == "function";
+    }
+
+    public function isMacro():Bool {
+        return type == "macro";
+    }
+
+    public function isSpecialForm():Bool {
+        return type == "special-form";
     }
 
 // builders
