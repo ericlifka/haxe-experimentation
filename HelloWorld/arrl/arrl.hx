@@ -207,15 +207,15 @@ class Eval {
         }
 
         if (callable.isSpecialForm()) {
-            return ArrlType.Nil();
+            return ArrlType.Error("unimplemented");
         }
 
         if (callable.isMacro()) {
-            return ArrlType.Nil();
+            return ArrlType.Error("unimplemented");
         }
 
         if (callable.isFunction()) {
-            return ArrlType.Nil();
+            return ArrlType.Error("unimplemented");
         }
 
         return ArrlType.Error("Found non callable value '" + callable + "'' in virst value of list '" + expression + "'");
