@@ -206,7 +206,17 @@ class Eval {
             return callable;
         }
 
+        if (callable.isSpecialForm()) {
+            return ArrlType.Nil();
+        }
 
+        if (callable.isMacro()) {
+            return ArrlType.Nil();
+        }
+
+        if (callable.isFunction()) {
+            return ArrlType.Nil();
+        }
 
         return ArrlType.Nil();
     }
