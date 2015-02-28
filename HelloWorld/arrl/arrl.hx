@@ -193,7 +193,7 @@ class Eval {
             return evalList(expression, scope);
         }
 
-        return ArrlType.Nil();
+        return ArrlType.Error("Unrecognized type passed to eval '" + expression + "'");
     }
 
     static public function evalList(expression:ArrlType, scope:Environment):ArrlType {
