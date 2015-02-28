@@ -21,6 +21,10 @@ class ArrlType {
         return type == "nil" || type == "error";
     }
 
+    public function isNil():Bool {
+        return type == "nil";
+    }
+
     public function isSymbol():Bool {
         return type == "symbol";
     }
