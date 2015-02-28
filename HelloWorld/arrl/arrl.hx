@@ -218,6 +218,6 @@ class Eval {
             return ArrlType.Nil();
         }
 
-        return ArrlType.Nil();
+        return ArrlType.Error("Found non callable value '" + callable + "'' in virst value of list '" + expression + "'");
     }
 }
