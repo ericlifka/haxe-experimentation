@@ -127,17 +127,17 @@ class ArrlType {
         return error;
     }
 
-    public static function Func() {
+    public static function Func(callable:ArrlType -> ArrlType) {
         var func = new ArrlType("function");
         return func;
     }
 
-    public static function Macro() {
+    public static function Macro(callable:ArrlType -> ArrlType) {
         var macroCell = new ArrlType("macro");
         return macroCell;
     }
 
-    public static function SpecialForm() {
+    public static function SpecialForm(callable:ArrlType -> Environment -> ArrlType) {
         var special = new ArrlType("special-form");
         return special;
     }
