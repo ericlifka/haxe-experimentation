@@ -121,23 +121,23 @@ class ArrlType {
         return cons;
     }
 
-    public static function Error(message:String) {
+    public static function Error(message:String):ArrlType {
         var error = new ArrlType("error");
         error.errorMessage = message;
         return error;
     }
 
-    public static function Func(callable:ArrlType -> ArrlType) {
+    public static function Func(callable:ArrlType -> ArrlType):ArrlType {
         var func = new ArrlType("function");
         return func;
     }
 
-    public static function Macro(callable:ArrlType -> ArrlType) {
+    public static function Macro(callable:ArrlType -> ArrlType):ArrlType {
         var macroCell = new ArrlType("macro");
         return macroCell;
     }
 
-    public static function SpecialForm(callable:ArrlType -> Environment -> ArrlType) {
+    public static function SpecialForm(callable:ArrlType -> Environment -> ArrlType):ArrlType {
         var special = new ArrlType("special-form");
         return special;
     }
@@ -173,7 +173,7 @@ class Environment {
         this.definedSymbols = new Map();
     }
 
-    public function putValue(sym:Symbol, value:ArrlType) {
+    public function putValue(sym:Symbol, value:ArrlType):Void {
         this.definedSymbols.set(sym, value);
     }
 
