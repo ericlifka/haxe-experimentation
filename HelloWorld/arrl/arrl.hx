@@ -133,8 +133,8 @@ class ArrlType {
     }
 
     public static function Macro() {
-        var macro = new ArrlType("macro");
-        return macro;
+        var macroCell = new ArrlType("macro");
+        return macroCell;
     }
 
     public static function SpecialForm() {
