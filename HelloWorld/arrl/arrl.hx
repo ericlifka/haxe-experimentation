@@ -126,6 +126,21 @@ class ArrlType {
         error.errorMessage = message;
         return error;
     }
+
+    public static function Func() {
+        var func = new ArrlType("function");
+        return func;
+    }
+
+    public static function Macro() {
+        var macro = new ArrlType("macro");
+        return macro;
+    }
+
+    public static function SpecialForm() {
+        var special = new ArrlType("special-form");
+        return special;
+    }
 }
 
 class Symbol {
