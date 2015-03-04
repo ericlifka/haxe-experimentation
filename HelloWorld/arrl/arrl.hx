@@ -80,12 +80,24 @@ class ArrlType {
         return type == "function";
     }
 
+    public function getFunction():ArrlType -> ArrlType {
+        return funcCallable;
+    }
+
     public function isMacro():Bool {
         return type == "macro";
     }
 
+    public function getMacro():ArrlType -> ArrlType {
+        return macroCallable;
+    }
+
     public function isSpecialForm():Bool {
         return type == "special-form";
+    }
+
+    public function getSpecialForm():ArrlType -> Environment -> ArrlType {
+        return specialCallable;
     }
 
 // builders
