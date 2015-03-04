@@ -12,6 +12,9 @@ class ArrlType {
     private var car:ArrlType;
     private var cdr:ArrlType;
     private var errorMessage:String;
+    private var funcCallable:ArrlType -> ArrlType;
+    private var macroCallable:ArrlType -> ArrlType;
+    private var specialCallable:ArrlType -> Environment -> ArrlType;
 
     private function new(type:String) {
         this.type = type;
@@ -129,16 +132,19 @@ class ArrlType {
 
     public static function Func(callable:ArrlType -> ArrlType):ArrlType {
         var func = new ArrlType("function");
+        func.funcCallable = callable;
         return func;
     }
 
     public static function Macro(callable:ArrlType -> ArrlType):ArrlType {
         var macroCell = new ArrlType("macro");
+        macroCell.macroCallable = callable;
         return macroCell;
     }
 
     public static function SpecialForm(callable:ArrlType -> Environment -> ArrlType):ArrlType {
         var special = new ArrlType("special-form");
+        special.specialCallable = callable;
         return special;
     }
 }
