@@ -245,7 +245,9 @@ class Eval {
         }
 
         if (callable.isMacro()) {
-            return ArrlType.Error("unimplemented");
+            var fn = callable.getMacro();
+            var expanded = fn(expression);
+            return eval(expanded, scope);
         }
 
         if (callable.isFunction()) {
