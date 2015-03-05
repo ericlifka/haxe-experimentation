@@ -240,7 +240,8 @@ class Eval {
         }
 
         if (callable.isSpecialForm()) {
-            return ArrlType.Error("unimplemented");
+            var fn = callable.getSpecialForm();
+            return fn(expression, scope);
         }
 
         if (callable.isMacro()) {
