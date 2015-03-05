@@ -264,4 +264,8 @@ class Eval {
 
         return ArrlType.Error("Found non callable value '" + callable + "'' in virst value of list '" + expression + "'");
     }
+
+    static public function eval_paramters(parameters:ArrlType, scope:Environmnt):ArrlType {
+
+    }
 }
