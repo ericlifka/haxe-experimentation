@@ -241,12 +241,12 @@ class Eval {
 
         if (callable.isSpecialForm()) {
             var fn = callable.getSpecialForm();
-            return fn(expression, scope);
+            return fn(rest, scope);
         }
 
         if (callable.isMacro()) {
             var fn = callable.getMacro();
-            var expanded = fn(expression);
+            var expanded = fn(rest);
             return eval(expanded, scope);
         }
 
