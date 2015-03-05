@@ -251,7 +251,15 @@ class Eval {
         }
 
         if (callable.isFunction()) {
-            return ArrlType.Error("unimplemented");
+            var fn = callable.getFunction();
+            var parameters = eval_parameters(rest, scope);
+
+            if (parameters.isError()) {
+                return parameters;
+            }
+            else {
+                return fn(parameters);
+            }
         }
 
         return ArrlType.Error("Found non callable value '" + callable + "'' in virst value of list '" + expression + "'");
