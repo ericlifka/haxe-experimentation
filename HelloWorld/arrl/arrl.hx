@@ -266,6 +266,24 @@ class Eval {
     }
 
     static public function eval_parameters(parameters:ArrlType, scope:Environment):ArrlType {
-        return ArrlType.Error("Unimplemented");
+        if (parameters.isNil()) {
+            return ArrlType.Nil();
+        }
+        else if (!parameters.isList()) {
+            return ArrlType.Error("Found non list type in parameter list '" + parameters + "'");
+        }
+        else {
+            var rest = eval_parameters(parameters.getCdr(), scope);
+            if (rest.isError()) {
+                return rest;
+            }
+
+            var current = eval(parameters.getCar(), scope);
+            if (current.isError()) {
+                return current;
+            }
+
+            return ArrlType.Cons(current, rest);
+        }
     }
 }
