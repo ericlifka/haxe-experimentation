@@ -3,5 +3,7 @@ class Parser {
 
     }
 
+    public function parseString(input:String):Void {
 
+    }
 }
