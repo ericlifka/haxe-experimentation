@@ -1,19 +1,15 @@
 class TestFoo extends haxe.unit.TestCase {
-
     public function testBasic(){
         assertEquals( "A", "A" );
     }
-
 }
 
 class MyTest {
-
     static function main(){
-        var r = new haxe.unit.TestRunner();
-        r.add(new TestFoo());
-        // your can add others TestCase here
+        var runner = new haxe.unit.TestRunner();
 
-        // finally, run the tests
-        r.run();
+        runner.add(new TestFoo());
+
+        runner.run();
     }
 }
