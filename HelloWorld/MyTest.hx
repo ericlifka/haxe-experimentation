@@ -1,6 +1,7 @@
 package;
 
-import arrl.Arrl;
+import Arrl;
+import Parser;
 
 class TestFoo extends haxe.unit.TestCase {
     public function testBasic() {
@@ -11,7 +12,9 @@ class TestFoo extends haxe.unit.TestCase {
 class TestParser extends haxe.unit.TestCase {
     public function testInstantiation() {
         var a = new Arrl();
+        var p = new Parser();
         assertTrue(a != null);
+        assertTrue(p != null);
     }
 }
 

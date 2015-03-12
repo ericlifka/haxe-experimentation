@@ -1,5 +1,3 @@
-package parser;
-
 class Parser {
     public function new() {
 
